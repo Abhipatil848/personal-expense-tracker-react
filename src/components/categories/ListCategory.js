@@ -9,9 +9,6 @@ function ListCategory() {
     loadCategories();
   },[])
   
-    
-  
-
   const loadCategories= async() =>{
     const result =axios.get("http://localhost:8080/api/categories");
     console.log(result.data);
