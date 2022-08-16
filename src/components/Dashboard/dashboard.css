@@ -1,0 +1,11 @@
+.dasboardnumber{
+    color: #FFF;
+    background-color: #0D6EFD;
+    border-radius: 5px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+.dashboard_card{
+    width: 100%;
+    margin-top: 1rem;
+}

@@ -1,23 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
+import ETNav from './components/ETNav';
+import Dashboard from './components/Dashboard/Dashboard';
+import AddProduct from './components/products/AddProduct';
+import ListProduct from './components/products/ListProduct';
+import { BrowserRouter as Router,Route,Routes } from 'react-router-dom';
+import AddCategory from './components/categories/AddCategory';
+import ListCategory from './components/categories/ListCategory';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <div>
+          <Router>
+            <ETNav/>
+          
+            <Routes>
+              <Route path='/' element={<Dashboard/>}/>
+              <Route path='/addproduct' element={<AddProduct/>}/>
+              <Route path='/listproducts' element={<ListProduct/>}/>
+              <Route path='/addcategory' element={<AddCategory/>}/>
+              <Route path='/listcategory' element={<ListCategory/>}/>
+
+            </Routes>
+          </Router>
+          
+      </div>
     </div>
   );
 }
