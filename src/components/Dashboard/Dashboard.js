@@ -6,6 +6,7 @@ import { Row, Col} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import './dashboard.css';
+import { Link } from "react-router-dom";
 
 function Dashboard() {
   return (
@@ -50,9 +51,9 @@ function Dashboard() {
           </Card>
         </Col >
         <div className="d-grid gap-2 mt-3">
-      <Button variant="primary" size="lg">
+      <Link className="btn btn-primary" variant="primary" size="lg" to={"/addtransaction"}>
         ADD TRANSACTIONS
-      </Button>
+      </Link>
       </div>
       </Row>
       

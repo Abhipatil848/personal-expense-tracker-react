@@ -10,8 +10,8 @@ function ListCategory() {
   },[])
   
   const loadCategories= async() =>{
-    const result =axios.get("http://localhost:8080/api/categories");
-    console.log(result.data);
+    const result = await axios.get("http://localhost:8080/categories");
+    setCategories(result.data);
   }
   return (
     <div className='container mt-5'>
@@ -19,17 +19,22 @@ function ListCategory() {
       <thead>
         <tr>
           <th>Id</th>
-          <th>Product Name</th>
-          <th>Product Description</th>
+          <th>category Name</th>
+          
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Otto</td>
-         
-        </tr>
+        {
+          categories.map((category,index)=>(
+            <tr key={index}>
+              <td >{index+1}</td>
+              <td>{category.categoryName}</td>
+                     
+            </tr>
+          ))
+
+        }
+        
       
       </tbody>
     </Table>

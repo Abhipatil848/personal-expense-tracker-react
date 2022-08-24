@@ -1,6 +1,18 @@
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
 
 function ListProduct() {
+  const [products,setproducts]=useState([]);
+
+  useEffect(()=>{
+    loadProducts();
+  },[])
+
+  const loadProducts=async()=>{
+    const result = await axios.get("http://localhost:8080/products");
+    setproducts(result.data);
+  }
   return (
     <div className='container mt-5'>
       <Table striped bordered hover variant="light">
@@ -12,24 +24,16 @@ function ListProduct() {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Otto</td>
-         
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          
-        </tr>
-        <tr>
-          <td>3</td>
-          <td >Larry </td>
-          <td>the Bird</td>
-         
-        </tr>
+        {
+          products.map((product,index)=>(
+          <tr key={index}>
+            <td >{index+1}</td>
+            <td>{product.productName}</td>
+            <td>{product.productDescription}</td>          
+          </tr>
+        ))
+
+      }
       </tbody>
     </Table>
     </div>

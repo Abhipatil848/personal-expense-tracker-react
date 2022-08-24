@@ -7,6 +7,7 @@ import ListProduct from './components/products/ListProduct';
 import { BrowserRouter as Router,Route,Routes } from 'react-router-dom';
 import AddCategory from './components/categories/AddCategory';
 import ListCategory from './components/categories/ListCategory';
+import AddTransaction from './components/transactions/AddTransaction'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
               <Route path='/listproducts' element={<ListProduct/>}/>
               <Route path='/addcategory' element={<AddCategory/>}/>
               <Route path='/listcategory' element={<ListCategory/>}/>
+              <Route path='/addtransaction' element={<AddTransaction/>}/>
 
             </Routes>
           </Router>
