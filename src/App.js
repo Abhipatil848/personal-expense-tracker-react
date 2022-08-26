@@ -7,7 +7,8 @@ import ListProduct from './components/products/ListProduct';
 import { BrowserRouter as Router,Route,Routes } from 'react-router-dom';
 import AddCategory from './components/categories/AddCategory';
 import ListCategory from './components/categories/ListCategory';
-import AddTransaction from './components/transactions/AddTransaction'
+import AddTransaction from './components/transactions/AddTransaction';
+import ListTransaction from './components/transactions/ListTransaction';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               <Route path='/addcategory' element={<AddCategory/>}/>
               <Route path='/listcategory' element={<ListCategory/>}/>
               <Route path='/addtransaction' element={<AddTransaction/>}/>
+              <Route path='/listtransaction' element={<ListTransaction/>}/>
 
             </Routes>
           </Router>

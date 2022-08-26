@@ -25,6 +25,11 @@ function ETNav() {
                 List Category
               </NavDropdown.Item>
             </NavDropdown>
+            <NavDropdown title="Transaction" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/listtransaction">
+                List Transaction
+              </NavDropdown.Item>
+            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Container>
